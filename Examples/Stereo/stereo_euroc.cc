@@ -191,11 +191,11 @@ int main(int argc, char **argv)
 
         // step 4.3 开始计时
 
-#ifdef COMPILEDWITHC11
+// #ifdef COMPILEDWITHC11
         std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
-#else
-        std::chrono::monotonic_clock::time_point t1 = std::chrono::monotonic_clock::now();
-#endif
+// #else
+//         std::chrono::monotonic_clock::time_point t1 = std::chrono::monotonic_clock::now();
+// #endif
 
         // Pass the images to the SLAM system
         // step 4.5 开始追踪
@@ -203,11 +203,11 @@ int main(int argc, char **argv)
 
         // step 4.6 追踪完成，停止计时，计算追踪时间
 
-#ifdef COMPILEDWITHC11
+// #ifdef COMPILEDWITHC11
         std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
-#else
-        std::chrono::monotonic_clock::time_point t2 = std::chrono::monotonic_clock::now();
-#endif
+// #else
+//         std::chrono::monotonic_clock::time_point t2 = std::chrono::monotonic_clock::now();
+// #endif
 
         double ttrack= std::chrono::duration_cast<std::chrono::duration<double> >(t2 - t1).count();
 
